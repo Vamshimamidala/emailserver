@@ -87,7 +87,7 @@ router.post('/register', upload.single('file'), async (req, res) => {
 
         // Generate email verification token
         const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '10m' });
-        const verificationLink = `https://yourdomain.com?token=${token}`;
+        const verificationLink = `https://emailver-2.onrender.com?token=${token}`;
 
         // Send verification email
         await transporter.sendMail({
